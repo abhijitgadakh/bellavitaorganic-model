@@ -1,0 +1,74 @@
+/* src/components/Header.css */
+.header {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.search-icon {
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.logo img {
+  height: 50px; /* Adjust size as needed */
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header-bottom {
+  padding: 10px 0;
+}
+
+.header-bottom ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.header-bottom ul li {
+  display: inline-block;
+}
+
+.header-bottom ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.header-bottom ul li a:hover {
+  color: #007bff; /* Optional hover effect */
+}

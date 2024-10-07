@@ -1,0 +1,115 @@
+/* src/components/Header.css */
+.header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Top Section */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.hamburger {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  font-size: 24px; /* Adjust size as needed */
+}
+
+/* Logo */
+.logo img {
+  height: 50px; /* Adjust size as needed */
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+  margin: 10px 0; /* Add margin for separation */
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  background-color: transparent;
+  width: 100%; /* Full width */
+}
+
+.search-icon {
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+/* Header Bottom */
+.header-bottom {
+  background-color: #f8f8f8;
+  padding: 10px 0;
+}
+
+.header-bottom ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.header-bottom ul li {
+  display: inline-block;
+}
+
+.header-bottom ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.header-bottom ul li a:hover {
+  color: #007bff; /* Optional hover effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block; /* Show hamburger icon on mobile */
+  }
+
+  .header-bottom {
+    display: none; /* Hide desktop menu on mobile */
+  }
+
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .search-box {
+    margin: 10px 0; /* Add margin for separation */
+  }
+}
+
+@media (min-width: 901px) {
+  .hamburger {
+    display: none; /* Hide hamburger on larger screens */
+  }
+}

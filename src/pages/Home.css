@@ -1,0 +1,52 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: -100px auto;
+  z-index: -1;
+  /* -ms-transform-origin-y: 10px; */
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.4s ease-in-out; /* Smooth sliding effect */
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.navigation-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+.offer {
+  margin: 110px 0;
+}
+
+.offer-img {
+  width: 100%;
+}

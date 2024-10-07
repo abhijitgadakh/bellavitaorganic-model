@@ -12,7 +12,7 @@
 .offer-text {
   display: inline-block;
   font-size: 1rem;
-  animation: slideInOut 6s ease-in-out infinite;
+  animation: slideInOut 4s ease-in-out infinite;
 }
 
 @keyframes slideInOut {

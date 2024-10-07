@@ -6,64 +6,62 @@ import "./Header.css"; // Import the CSS file for styling
 
 const Header = () => {
   return (
-    <header className="header">
-      <div className="header-top">
-        <div className="search-box">
-          <input type="text" placeholder="Search" />
-          <FaSearch className="search-icon" />
+    <div className="header-div">
+      <header className="header">
+        <div className="header-top">
+          <div className="search-box">
+            <input type="text" placeholder="Search" />
+            <FaSearch className="search-icon" />
+          </div>
+
+          <div className="logo">
+            <img src="/path/to/logo.png" alt="Logo" />
+          </div>
+
+          <div className="icons">
+            <FaUser className="icon" />
+            <FaShoppingCart className="icon" />
+          </div>
         </div>
 
-        <div className="logo">
-          <img src="/path/to/logo.png" alt="Logo" />
+        <div className="header-bottom">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/products">Buy1Get1</Link>
+              </li>
+              <li>
+                <Link to="/products">BuildABox</Link>
+              </li>
+              <li>
+                <Link to="/products">ShopAllProducts</Link>
+              </li>
+              <li>
+                <Link to="/products">Bestsellers</Link>
+              </li>
+              <li>
+                <Link to="/products">LuxuryPerfumes</Link>
+              </li>
+              <li>
+                <Link to="/products">AllNaturalBodyCareProducts</Link>
+              </li>
+              <li>
+                <Link to="/products">Cosmetics</Link>
+              </li>
+              <li>
+                <Link to="/products">NewArrivals</Link>
+              </li>
+              <li>
+                <Link to="/products">NaturalSkinCareProducts</Link>
+              </li>
+              <li>
+                <Link to="/products">GiftSets</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
-
-        <div className="icons">
-          <FaUser className="icon" />
-          <FaShoppingCart className="icon" />
-        </div>
-      </div>
-
-      <div className="header-bottom">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/buy1get1">Buy1Get1</Link>
-            </li>
-            <li>
-              <Link to="/build-a-box">BuildABox</Link>
-            </li>
-            <li>
-              <Link to="/shop-all-products">ShopAllProducts</Link>
-            </li>
-            <li>
-              <Link to="/bestsellers">Bestsellers</Link>
-            </li>
-            <li>
-              <Link to="/luxury-perfumes">LuxuryPerfumes</Link>
-            </li>
-            <li>
-              <Link to="/all-natural-body-care-products">
-                AllNaturalBodyCareProducts
-              </Link>
-            </li>
-            <li>
-              <Link to="/cosmetics">Cosmetics</Link>
-            </li>
-            <li>
-              <Link to="/new-arrivals">NewArrivals</Link>
-            </li>
-            <li>
-              <Link to="/natural-skin-care-products">
-                NaturalSkinCareProducts
-              </Link>
-            </li>
-            <li>
-              <Link to="/gift-sets">GiftSets</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 };
 

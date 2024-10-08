@@ -77,11 +77,7 @@ const Products = () => {
   return (
     <>
       <div className="offer product-page">
-        <img
-          className="offer-img"
-          src="public/HomePage/04_hero5.png"
-          alt="offer"
-        />
+        <img className="offer-img" src="/HomePage/04_hero5.png" alt="offer" />
       </div>
       <div className="products">
         <div className="category-display">

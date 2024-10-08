@@ -1,7 +1,40 @@
 /* src/components/Header.css */
-.header {
+.header-div {
   width: 80%;
   margin: 0 auto;
+}
+
+.header-div.not-home {
+  background-color: #fff; /* Optional background color for non-home */
+}
+
+.header-div.not-home .header-top .search-box {
+  border-bottom: 2px solid #000; /* Underline search box */
+}
+
+.header-div.not-home .search-icon {
+  filter: invert(0); /* Normal search icon color */
+}
+
+.header-div.not-home .logo img {
+  filter: invert(0); /* Invert logo */
+}
+
+.header-div.not-home .icons {
+  color: #000; /* Change user and cart icons to black */
+}
+
+.header-div.not-home .header-bottom ul li a {
+  color: #000; /* Change user and cart icons to black */
+}
+
+.header-bottom ul li a {
+  color: #000; /* Nav links color */
+  transition: color 0.3s ease;
+}
+
+.header-bottom ul li a:hover {
+  color: #999; /* Hover color for nav links */
 }
 
 .header-div:hover {
@@ -16,7 +49,17 @@
   color: #000;
 }
 
+.header-div:hover .search-box {
+  border-bottom: 2px solid #000;
+}
+
+.header-div:hover .logo img {
+  filter: invert(0);
+}
+
 .header-top {
+  margin: 0 auto;
+  width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +69,7 @@
 .search-box {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #fff;
   padding-bottom: 5px;
 }
 
@@ -45,11 +88,21 @@
 }
 
 .logo img {
-  height: 50px; /* Adjust size as needed */
+  filter: invert(1);
+  height: 30px;
+}
+.logo:hover {
+  cursor: pointer;
 }
 
 .icons {
   color: #fff;
+  display: flex;
+  gap: 15px;
+}
+
+.icons:hover {
+  color: #ff0000;
   display: flex;
   gap: 15px;
 }

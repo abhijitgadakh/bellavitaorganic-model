@@ -2,6 +2,52 @@ import React from "react";
 import "./Footer.css"; // Ensure you create a CSS file for styling
 
 const Footer = () => {
+  const keywords = [
+    "Perfume",
+    "Best perfume for men",
+    "Perfume for men",
+    "Vitamin C Face Wash",
+    "Perfume for women",
+    "Best perfume for women",
+    "Perfume for girls",
+    "Dark circles removal cream",
+    "Acne face wash",
+    "Under eye cream",
+    "Gift sets for women",
+    "Body wash for women",
+    "Pocket perfume for men",
+    "De tan face pack",
+    "Pimple removal cream",
+    "Lip scrub",
+    "Tan removal face pack",
+    "Face wash for acne",
+    "Exfoliate scrub",
+    "Gift set for men",
+    "Coffee Body Scrub",
+    "Best long lasting perfume for men",
+    "Perfumes for men under 500",
+    "Perfumes for women",
+    "Perfume gift sets",
+    "Oud perfume",
+    "CEO perfume",
+    "Under eye cream for dark circles",
+    "Acne cream",
+    "Vitamin C cream for face",
+    "Body lotion for women",
+    "Long lasting perfume for women",
+    "Perfume gift pack for her",
+    "Perfume gift pack for him",
+    "Charcoal face wash",
+    "Body wash for men",
+    "Best shower gel for women",
+    "Shower gel for men",
+    "Body Lotion for men and Women",
+    "Body lotion for dry skin",
+    "Body lotion for men",
+    "Body lotion for women",
+    "Shower Gel and Perfume Combo",
+  ];
+
   return (
     <div className="footer">
       <div className="footer-container">
@@ -97,52 +143,16 @@ const Footer = () => {
             </a>
           </div>
         </div>
-      </div>
-      <div className="keywords">
-        <h3>Keywords</h3>
-        <span>Perfume</span>
-        <span>Best perfume for men</span>
-        <span>Perfume for men</span>
-        <span>Vitamin C Face Wash</span>
-        <span>Perfume for women</span>
-        <span>Best perfume for women</span>
-        <span>Perfume for girls</span>
-        <span>Dark circles removal cream</span>
-        <span>Acne face wash</span>
-        <span>Under eye cream</span>
-        <span>Gift sets for women</span>
-        <span>Body wash for women</span>
-        <span>Pocket perfume for men</span>
-        <span>De tan face pack</span>
-        <span>Pimple removal cream</span>
-        <span>Lip scrub</span>
-        <span>Tan removal face pack</span>
-        <span>Face wash for acne</span>
-        <span>Exfoliate scrub</span>
-        <span>Gift set for men</span>
-        <span>Coffee Body Scrub</span>
-        <span>Best long lasting perfume for men</span>
-        <span>Perfumes for men under 500</span>
-        <span>Perfumes for women</span>
-        <span>Perfume gift sets</span>
-        <span>Oud perfume</span>
-        <span>CEO perfume</span>
-        <span>Under eye cream for dark circles</span>
-        <span>Acne cream</span>
-        <span>Vitamin C cream for face</span>
-        <span>Body lotion for women</span>
-        <span>Long lasting perfume for women</span>
-        <span>Perfume gift pack for her</span>
-        <span>Perfume gift pack for him</span>
-        <span>Charcoal face wash</span>
-        <span>Body wash for men</span>
-        <span>Best shower gel for women</span>
-        <span>Shower gel for men</span>
-        <span>Body Lotion for men and Women</span>
-        <span>Body lotion for dry skin</span>
-        <span>Body lotion for men</span>
-        <span>Body lotion for women</span>
-        <span>Shower Gel and Perfume Combo</span>
+        <div className="keywords">
+          {keywords.map((keyword, index) => (
+            <span className="bes-line-1" key={index}>
+              <a className="keyword-link" href="#">
+                {keyword}
+              </a>
+              {index < keywords.length - 1 && " | "}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

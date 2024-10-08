@@ -12,6 +12,10 @@
   margin: 0 auto;
 }
 
+.bes-line-1 {
+  color: #fff;
+}
+
 .footer-column {
   flex: 1;
   min-width: 200px;
@@ -90,11 +94,36 @@
   font-size: 20px;
 }
 
+.keyword-link:link {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+.keyword-link:link {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.keyword-link:visited {
+  color: white; /* Ensure visited links remain white */
+}
+
+.keyword-link:link:hover {
+  text-decoration: none;
+}
+
 .keywords {
+  /* text-align: center; */
+  font-size: 10px;
   border-top: 1px solid #444;
   padding-top: 20px;
   margin-top: 20px;
-  font-size: 14px;
+
   color: #ddd;
   line-height: 1.8;
 }

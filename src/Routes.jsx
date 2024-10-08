@@ -8,6 +8,7 @@ import Products from "./pages/Products";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
+import Footer from "./components/Footer";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer />
     </>
   );
 };

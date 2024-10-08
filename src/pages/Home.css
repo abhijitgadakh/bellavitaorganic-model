@@ -1,11 +1,27 @@
+.logo-slider-container {
+  overflow: hidden; /* Hide the overflow to create a sliding effect */
+  margin: 20px 0; /* Add some margin around the slider */
+}
+
+.logo-slider {
+  display: flex; /* Display logos in a row */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.logo-slider img {
+  width: 150px; /* Adjust logo width as needed */
+  height: auto;
+  margin-right: 20px; /* Space between logos */
+}
+
+/* Adjust existing styles as necessary */
 .slider {
   position: relative;
   width: 100%;
   height: auto;
   overflow: hidden;
-  margin: -100px auto;
+  margin: -120px auto;
   z-index: -1;
-  /* -ms-transform-origin-y: 10px; */
 }
 
 .slides {
@@ -44,7 +60,7 @@
 }
 
 .offer {
-  margin: 110px 0;
+  margin: 130px 0 80px 0;
 }
 
 .offer-img {

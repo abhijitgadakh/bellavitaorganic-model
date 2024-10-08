@@ -10,8 +10,8 @@ const Header = ({ userName }) => {
 
   const handleCartClick = () => {
     if (!userName) {
-      alert("Login first to check cart");
-      navigate("/login"); // Redirect to login page
+      // alert("Login first to check cart");
+      navigate("/cart"); // Redirect to login page
     } else {
       navigate("/cart"); // Navigate to the Cart page
     }

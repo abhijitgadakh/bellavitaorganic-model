@@ -89,28 +89,6 @@ const Home = () => {
       </div>
       <ProductSwitcher />
 
-      <div className="logo-slider-container">
-        <div className="logo-slider" ref={logoSliderRef}>
-          {logos.map((logo, index) => (
-            <img
-              key={index}
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              className="logo"
-            />
-          ))}
-          {/* Duplicate logos for seamless scrolling */}
-          {logos.map((logo, index) => (
-            <img
-              key={`duplicate-${index}`}
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              className="logo"
-            />
-          ))}
-        </div>
-      </div>
-
       <div className="offer">
         <img
           className="offer-img"
@@ -134,6 +112,27 @@ const Home = () => {
       </div>
       <div className="offer">
         <img className="offer-img" src="/HomePage/29_images.png" alt="offer" />
+      </div>
+      <div className="logo-slider-container">
+        <div className="logo-slider" ref={logoSliderRef}>
+          {logos.map((logo, index) => (
+            <img
+              key={index}
+              src={logo}
+              alt={`Logo ${index + 1}`}
+              className="logo"
+            />
+          ))}
+          {/* Duplicate logos for seamless scrolling */}
+          {logos.map((logo, index) => (
+            <img
+              key={`duplicate-${index}`}
+              src={logo}
+              alt={`Logo ${index + 1}`}
+              className="logo"
+            />
+          ))}
+        </div>
       </div>
     </>
   );

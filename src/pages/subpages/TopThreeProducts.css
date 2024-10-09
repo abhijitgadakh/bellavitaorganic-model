@@ -1,0 +1,68 @@
+.top-products-container {
+  display: flex; /* Use flexbox to arrange items side by side */
+  justify-content: center; /* Center the whole component horizontally */
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Space between left and right sections */
+}
+
+.image-container {
+  position: relative;
+  text-align: center; /* Center the dots below the image */
+}
+
+.main-image {
+  width: 250px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.dot-indicator {
+  display: flex; /* Align dots in a row */
+  justify-content: center; /* Center the dots */
+  margin-top: 10px; /* Space above the dots */
+}
+
+.dot {
+  display: inline-block;
+  width: 10px; /* Adjust size as needed */
+  height: 10px; /* Adjust size as needed */
+  border-radius: 50%;
+  background-color: lightgray; /* Default dot color */
+  margin: 0 5px; /* Space between dots */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.dot.active {
+  background-color: black; /* Active dot color */
+}
+
+.product-display {
+  display: flex; /* Display product details in a column */
+  flex-direction: column; /* Align product details vertically */
+  text-align: left; /* Align text to the left */
+}
+
+.product-image {
+  width: 200px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.dash-indicator {
+  display: flex;
+  justify-content: center; /* Center the dashes */
+  margin-top: 10px; /* Space between product image and dashes */
+}
+
+.dash {
+  display: inline-block;
+  width: 40px; /* Adjust width for the dashes */
+  height: 4px; /* Adjust height */
+  background-color: lightgray; /* Default dash color */
+  margin: 0 5px; /* Space between dashes */
+  transition: background-color 0.3s ease, height 0.3s ease; /* Smooth transition */
+}
+
+.dash.active {
+  background-color: black; /* Active dash color */
+  height: 8px; /* Thicker for the active dash */
+}

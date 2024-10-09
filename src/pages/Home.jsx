@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import ProductSwitcher from "./subpages/ProductSwitcher";
+import TopThreeProducts from "./subpages/TopThreeProducts";
 import { useNavigate } from "react-router-dom";
 
 const images = [
   "/HomePage/01_hero1.png",
-  "/HomePage/02_hero2.png",
   "/HomePage/03_hero3.png",
+  "/HomePage/02_hero2.png",
   "/HomePage/04_hero4.png",
 ];
 
@@ -96,6 +97,8 @@ const Home = () => {
           alt="offer"
         />
       </div>
+
+      <TopThreeProducts />
       <div className="offer">
         <img
           className="offer-img"

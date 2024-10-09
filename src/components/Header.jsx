@@ -1,30 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 import "./Header.css";
 
-const Header = ({ userName }) => {
+const Header = ({ userName, setUserName }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const handleCartClick = () => {
     if (!userName) {
-      // alert("Login first to check cart");
-      navigate("/cart"); // Redirect to login page
+      // Redirect to login page if the user is not logged in
+      alert("Login first to check cart");
+      navigate("/login");
     } else {
-      navigate("/cart"); // Navigate to the Cart page
+      navigate("/cart"); // Navigate to the Cart page if logged in
     }
   };
+
   const handleLogoClick = () => {
     navigate("/"); // Redirect to home page
   };
+
   const handleUserClick = () => {
     if (!userName) {
-      navigate("/login"); // Redirect to login page
+      navigate("/login"); // Redirect to login page if not logged in
     } else {
-      alert("already Logged In");
+      setDropdownVisible((prev) => !prev); // Toggle dropdown visibility
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("userEmail"); // Clear user data from local storage
+    setUserName(null); // Clear userName state
+    setDropdownVisible(false); // Hide the dropdown after logging out
+    navigate("/"); // Redirect to home page after logout
   };
 
   return (
@@ -49,7 +60,14 @@ const Header = ({ userName }) => {
 
           <div className="icons">
             {userName ? (
-              <span>{userName}</span>
+              <>
+                <span onClick={handleUserClick}>{userName}</span>
+                {dropdownVisible && (
+                  <div className="dropdown">
+                    <button onClick={handleLogout}>Logout</button>
+                  </div>
+                )}
+              </>
             ) : (
               <FaUser
                 onClick={handleUserClick}
@@ -70,35 +88,39 @@ const Header = ({ userName }) => {
                 <Link to="/products?filter=bojo">Buy1Get1</Link>
               </li>
               <li>
-                <Link to="/products?filter=giftKit">BuildABox</Link>
+                <Link to="/products?filter=build-a-box">BuildABox</Link>
               </li>
               <li>
-                <Link to="/products?filter=all">ShopAllProducts</Link>
+                <Link to="/products?filter=shop-all-products">
+                  ShopAllProducts
+                </Link>
               </li>
               <li>
-                <Link to="/products?filter=bestseller">Bestsellers</Link>
+                <Link to="/products?filter=bestsellers">Bestsellers</Link>
               </li>
               <li>
-                <Link to="/products?filter=perfumes">LuxuryPerfumes</Link>
+                <Link to="/products?filter=luxury-perfumes">
+                  LuxuryPerfumes
+                </Link>
               </li>
               <li>
-                <Link to="/products?filter=bodyCare">
+                <Link to="/products?filter=all-natural-body-care-products">
                   AllNaturalBodyCareProducts
                 </Link>
               </li>
               <li>
-                <Link to="/products?filter=bodyCare">Cosmetics</Link>
+                <Link to="/products?filter=cosmetics">Cosmetics</Link>
               </li>
               <li>
-                <Link to="/products?filter=new">NewArrivals</Link>
+                <Link to="/products?filter=new-arrivals">NewArrivals</Link>
               </li>
               <li>
-                <Link to="/products?filter=bodyCare">
+                <Link to="/products?filter=nature-skin-care-products">
                   NaturalSkinCareProducts
                 </Link>
               </li>
               <li>
-                <Link to="/products?filter=giftKit">GiftSets</Link>
+                <Link to="/products?filter=gift-sets">GiftSets</Link>
               </li>
             </ul>
           </nav>

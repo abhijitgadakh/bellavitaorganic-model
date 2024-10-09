@@ -3,27 +3,29 @@ import "./Login.css"; // Import CSS styles
 import userData from "../data/user-data.json"; // Import user data from JSON
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setUserName }) => {
   const navigate = useNavigate(); // Hook to navigate
   const [isSignUp, setIsSignUp] = useState(false);
   const [mobileNumber, setMobileNumber] = useState("");
   const [otp, setOtp] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
 
+  // Handle OTP sending
   const handleSendOtp = () => {
     if (mobileNumber.length === 10) {
-      // Simulate sending OTP
-      setOtpSent(true);
+      setOtpSent(true); // Simulate sending OTP
       setError("");
     } else {
       setError("Please enter a valid 10-digit mobile number.");
     }
   };
 
+  // Verify the OTP
   const handleVerifyOtp = () => {
     if (otp === "1234") {
       setIsVerified(true);
@@ -33,32 +35,43 @@ const Login = () => {
     }
   };
 
+  // Handle Login
   const handleLogin = () => {
-    // Check user credentials in userdata.json
     const user = userData.find(
       (user) => user.email === email && user.password === password
     );
     if (user) {
+      setUserName(user.name); // Update the userName in the parent component
+      localStorage.setItem("userName", user.name); // Save userName in local storage
       navigate("/"); // Redirect to home page
     } else {
       setError("Wrong credentials. Please try again.");
     }
   };
 
+  // Handle sign-up logic with password matching
   const handleSubmitSignUp = () => {
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    const username = email.split("@")[0]; // Extract name from email before '@'
     const newUser = {
-      name: mobileNumber, // You can change this to a name input later
+      name: username,
       email,
+      phone: mobileNumber,
       password,
       dateofcreation: new Date().toISOString(),
     };
 
-    // Simulate saving to JSON (In real application, you would send this to a backend)
-    const updatedUserData = [...userData, newUser];
-    console.log("New User Data:", updatedUserData);
+    // Save user data to Local Storage
+    localStorage.setItem("userData", JSON.stringify(newUser));
 
-    // Redirect to login after successful signup
-    navigate("/login");
+    // Update userName in the parent component
+    setUserName(username);
+    // Redirect to home with success message
+    navigate("/", { state: { message: "Account created successfully" } });
   };
 
   return (
@@ -94,7 +107,7 @@ const Login = () => {
               <button className="btn-login" onClick={handleVerifyOtp}>
                 Verify
               </button>
-              <small>For testing purpose use OTP: 1234</small>
+              <small>For testing purposes, use OTP: 1234</small>
             </>
           )}
 
@@ -111,6 +124,12 @@ const Login = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <button className="btn-login" onClick={handleSubmitSignUp}>
                 Sign Up
